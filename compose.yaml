@@ -1,0 +1,12 @@
+services:
+  web: 
+    environment:
+     - SECRET_KEY=${SECRET_KEY}
+     - DEBUG=${DEBUG}
+     - MONGO_URL=${MONGO_URL}
+    build:
+      context: team_service
+      target: builder
+    restart: always
+    ports: 
+      - '8000:8000'
