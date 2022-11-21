@@ -1,0 +1,10 @@
+services:
+  web: 
+    environment:
+     - SECRET_KEY='django-insecure-l-6vx$ms8fu9(lir$p2r9!$^w0fupdiq)b8k#1tc1aq)m_o+17'
+     - DEBUG=1
+    build:
+      context: team_service
+      target: builder
+    ports: 
+      - '8000:8000'
