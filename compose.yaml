@@ -1,0 +1,9 @@
+services:
+  web: 
+    build:
+      context: team_service
+      target: builder
+    ports: 
+      - '8000:8000'
+    enviroment:
+      - DEBUG=1
