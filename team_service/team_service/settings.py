@@ -123,7 +123,11 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'team',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+                'host': os.environ.get('MONGO_URL')
+        }
     }
 }

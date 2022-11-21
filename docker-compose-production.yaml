@@ -1,8 +1,9 @@
 services:
   web: 
     environment:
-     - SECRET_KEY='django-insecure-l-6vx$ms8fu9(lir$p2r9!$^w0fupdiq)b8k#1tc1aq)m_o+17'
+     - SECRET_KEY=django-insecure-l-6vx$ms8fu9(lir$p2r9!$^w0fupdiq)b8k#1tc1aq)m_o+17
      - DEBUG=0
+     - MONGO_URL=mongodb+srv://ubrimania:hola1234@cluster0.m2jp5un.mongodb.net/test
     build:
       context: team_service
       target: builder
