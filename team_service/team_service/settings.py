@@ -111,9 +111,9 @@ STATIC_URL = 'static/'
 # CORE SETTINGS
 # ==============================================================================
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-DEBUG = os.environ['DEBUG']
+DEBUG = os.environ.get('DEBUG', '')
 
 ALLOWED_HOSTS = []
 
@@ -127,7 +127,7 @@ DATABASES = {
         'NAME': 'team',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-                'host': os.environ.get('MONGO_URL')
+                'host': os.environ.get('MONGO_URL', '')
         }
     }
 }
