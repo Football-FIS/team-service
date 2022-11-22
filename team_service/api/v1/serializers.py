@@ -5,3 +5,6 @@ class TeamSerializer(serializers.ModelSerializer):
   class Meta:
     model = Team
     fields = '__all__'
+    extra_kwargs = {
+      'id': {'read_only': True},
+    }
