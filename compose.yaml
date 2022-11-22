@@ -1,12 +1,11 @@
 services:
-  web: 
-    environment:
-     - SECRET_KEY=${SECRET_KEY}
-     - DEBUG=${DEBUG}
-     - MONGO_URL=${MONGO_URL}
+  web:
     build:
       context: team_service
       target: builder
+    env_file:
+      - .env
+      - ../docker-service/.env
     restart: always
     ports: 
       - '8000:8000'
