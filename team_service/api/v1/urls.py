@@ -8,7 +8,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import TeamViewSet
+from .views import TeamViewSet, ValidateToken
 
 
 
@@ -18,4 +18,5 @@ router.register(r'team', TeamViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('validate-token', ValidateToken.as_view())
 ]
