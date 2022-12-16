@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api.v1',
-     # Auth & social auth
+     # Auth & social auth  # noqa
     'dj_rest_auth',
     'allauth',
     'allauth.account',
@@ -46,7 +46,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 # Disable email verification since this is just a test.
-# If you want to enable it, you'll need to configure django-allauth's email confirmation pages
+# If you want to enable it, you'll need to configure django-allauth's email confirmation pages  # noqa
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_EMAIL_REQUIRED = False
 
@@ -57,8 +57,8 @@ SITE_ID = 1
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-    'ROTATE_REFRESH_TOKENS': True, # IMPORTANT
-    'BLACKLIST_AFTER_ROTATION': True, # IMPORTANT
+    'ROTATE_REFRESH_TOKENS': True, # IMPORTANT  # noqa
+    'BLACKLIST_AFTER_ROTATION': True, # IMPORTANT  # noqa
     'UPDATE_LAST_LOGIN': True,
 }
 
@@ -87,7 +87,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # Rest Settings
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),  # noqa
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
@@ -102,7 +102,7 @@ REST_FRAMEWORK = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'templates']  # noqa
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,16 +123,16 @@ TEMPLATES = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
