@@ -25,8 +25,8 @@ class Team(models.Model):
     capacity_stadium = models.IntegerField(null=True)
     president_name = models.CharField(max_length=255, null=True)
     league_name = models.CharField(max_length=255, null=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
-    longuitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
+    latitude = models.CharField(null=True)
+    longuitude = models.CharField(null=True)
     expiration = models.DateField(null=True)
     plan_type = models.CharField(
         max_length=3,
