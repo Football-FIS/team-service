@@ -161,9 +161,9 @@ STATIC_URL = 'static/'
 # CORE SETTINGS
 # ==============================================================================
 
-SECRET_KEY = 'django-insecure-l-6vx$ms8fu9(lir$p2r9!$^w0fupdiq)b8k#1tc1aq)m_o+17'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', '')
 
 ALLOWED_HOSTS = ['*']
 
@@ -177,7 +177,7 @@ DATABASES = {
         'NAME': 'team',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-                'host': 'mongodb+srv://ubrimania:hola1234@cluster0.m2jp5un.mongodb.net/test'
+                'host': os.environ.get('MONGO_URL', '')
         }
     }
 }
