@@ -22,7 +22,7 @@ class Team(models.Model):
     address = models.CharField(max_length=255, null=True)
     coach_name = models.CharField(max_length=255, null=True)
     stadium_name = models.CharField(max_length=255, null=True)
-    capacity_stadium = models.models.IntegerField(null=True)
+    capacity_stadium = models.IntegerField(null=True)
     president_name = models.CharField(max_length=255, null=True)
     league_name = models.CharField(max_length=255, null=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
