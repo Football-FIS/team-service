@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api.v1',
      # Auth & social auth  # noqa
+    'drf_yasg',
     'dj_rest_auth',
     'allauth',
     'allauth.account',
