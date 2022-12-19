@@ -11,3 +11,5 @@ djangorestframework-simplejwt==5.2.2
 PyJWT==2.6.0
 google-auth==2.15.0
 sqlparse==0.2.4
+ruamel.yaml.clib==0.2.2
+drf_yasg==1.21.4
