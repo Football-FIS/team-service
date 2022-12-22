@@ -1,9 +1,9 @@
 services:
-  web:
+  team-service:
     build:
-      context: team_service
+      context:team_service
       target: builder
-    environment:
+    environment: 
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
       - MONGO_URL=${MONGO_URL}
