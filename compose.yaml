@@ -2,7 +2,7 @@ services:
   team-service:
     build:
       context:team_service
-      target: builder
+    target: builder
     environment: 
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
