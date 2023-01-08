@@ -33,6 +33,7 @@ class Team(models.Model):
         choices=PLAN_TYPE,
         default='FRE',
     )
+    matches_month_created = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['user']

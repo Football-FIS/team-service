@@ -7,6 +7,13 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
       - MONGO_URL=${MONGO_URL}
+    networks:
+      - team-service_default
     restart: always
     ports: 
       - '8000:8000'
+
+networks:
+  team-service_default:
+    driver: bridge
+    external: true

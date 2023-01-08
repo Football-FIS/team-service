@@ -46,6 +46,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
 # Disable email verification since this is just a test.
 # If you want to enable it, you'll need to configure django-allauth's email confirmation pages  # noqa
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
@@ -182,3 +183,8 @@ DATABASES = {
         }
     }
 }
+
+# ==============================================================================
+# LOGIN GOOGLE
+# ==============================================================================
+CALLBACK_URL = os.environ.get('CALLBACK_URL', '')

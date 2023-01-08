@@ -1,3 +1,4 @@
+from team_service.team_service import settings
 from .models import Team
 from .serializers import TeamSerializer, UserSerializer
 from rest_framework import viewsets
@@ -8,12 +9,20 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 
 
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
     permission_classes = (AllowAny,)
+
+    @method_decorator(vary_on_cookie)
+    @method_decorator(cache_page(60*60))
+    def dispatch(self, *args, **kwargs):
+        return super(TeamViewSet, self).dispatch(*args, **kwargs)
 
 
 class ValidateToken(APIView):
@@ -39,11 +48,12 @@ class SendEmailPlayer(APIView):
                 "message": "this user has a permission to send email"
             })
         else:
-            return JsonResponse({"status": "error"})  
+            return JsonResponse({"status": "error"})
 
 
 class GoogleLogin(SocialLoginView):
+    permission_classes = (AllowAny,)
     authentication_classes = []  # disable authentication
     adapter_class = GoogleOAuth2Adapter
-    callback_url = "http://localhost:3000/login"
+    callback_url = settings.CALLBACK_URL
     client_class = OAuth2Client
