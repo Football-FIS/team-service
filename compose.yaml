@@ -7,6 +7,7 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
       - MONGO_URL=${MONGO_URL}
+      - CALLBACK_URL=${CALLBACK_URL}
     networks:
       - team-service_default
     restart: always
