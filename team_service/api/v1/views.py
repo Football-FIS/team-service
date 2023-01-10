@@ -1,4 +1,4 @@
-from team_service.team_service import settings
+from django.conf import settings
 from .models import Team
 from .serializers import TeamSerializer, UserSerializer
 from rest_framework import viewsets
