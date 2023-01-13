@@ -57,7 +57,7 @@ REST_USE_JWT = True
 SITE_ID = 1
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=525600),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True, # IMPORTANT  # noqa
     'BLACKLIST_AFTER_ROTATION': True, # IMPORTANT  # noqa
