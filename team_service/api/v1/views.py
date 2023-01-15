@@ -1,4 +1,5 @@
-from django.conf import settings
+import requests
+from team_service.settings import PLAYER_SERV_URL, CALLBACK_URL
 from .models import Team
 from .serializers import TeamSerializer, UserSerializer
 from rest_framework import viewsets
@@ -35,18 +36,25 @@ class SendEmailPlayer(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request, format=None):
-
         plan_type_allowed = ['PRE', 'ENT']
-
-        team_filter = Team.objects.get(id=request)
+        team_filter = Team.objects.get(user_id=request.data['user_id'])
         pl_type = team_filter.plan_type
 
         if pl_type in plan_type_allowed:
-            # Aquí nos conectamos a player service
-            return JsonResponse({
-                "status": "ok",
-                "message": "this user has a permission to send email"
-            })
+            r = requests.post(
+                PLAYER_SERV_URL + '/api/v1/notify-players/',
+                data=request.data
+            )
+
+            if r.status_code == 202:
+                return JsonResponse({
+                    "status": "ok",
+                    "message": "Request sent to player service."
+                })
+            else:
+                return JsonResponse({
+                    "status": "error"
+                })
         else:
             return JsonResponse({"status": "error"})
 
@@ -55,5 +63,5 @@ class GoogleLogin(SocialLoginView):
     permission_classes = (AllowAny,)
     authentication_classes = []  # disable authentication
     adapter_class = GoogleOAuth2Adapter
-    callback_url = settings.CALLBACK_URL
+    callback_url = CALLBACK_URL
     client_class = OAuth2Client
