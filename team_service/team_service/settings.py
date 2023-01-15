@@ -188,3 +188,22 @@ DATABASES = {
 # LOGIN GOOGLE
 # ==============================================================================
 CALLBACK_URL = os.environ.get('CALLBACK_URL', '')
+
+# ==============================================================================
+# MICROSERVICES
+# ==============================================================================
+PLAYER_SERV_URL = os.environ.get('PLAYER_SERV_URL', '')
+
+# ==============================================================================
+# CACHE REDIS
+# ==============================================================================
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://cache-team-service:6379/0",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
