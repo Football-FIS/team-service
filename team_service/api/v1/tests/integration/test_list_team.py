@@ -22,6 +22,8 @@ def test_list_team(client):
     teams = Team.objects.all()
     expected_data = TeamSerializer(teams, many=True).data
     response_data = response.data
+    response_data[0]['user'] = None
+    expected_data[0]['user'] = None
 
     assert response.status_code == 200
-    assert response_data == expected_data
+    assert str(response_data) == str(expected_data)

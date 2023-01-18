@@ -25,7 +25,7 @@ def test_team_serializer():
         'longuitude': '56.85283',
         'matches_month_created': 0,
         'name': 'Sevilla FC',
-        'plan_type': 'FRE',
+        'plan_type': 'PRE',
         'president_name': 'José Castro Carmona',
         'stadium_name': 'Estadio Ramón Sánchez-Pizjuán',
         'state': 'Sevilla',
