@@ -192,7 +192,7 @@ CALLBACK_URL = os.environ.get('CALLBACK_URL', '')
 # ==============================================================================
 # MICROSERVICES
 # ==============================================================================
-PLAYER_SERV_URL = os.environ.get('PLAYER_SERV_URL', '')
+PLAYER_SERV_URL = os.environ.get('PLAYER_SERV_URL', 'http://localhost:8002/')
 
 # ==============================================================================
 # CACHE REDIS

@@ -26,7 +26,7 @@ def test_create_team(client):
         'league_name': 'La Liga',
         'latitude': '75.021313',
         'longuitude': '56.021313',
-        'plan_type': 'FRE',
+        'plan_type': 'PRE',
         'matches_month_created': 0
     }
 
@@ -58,7 +58,7 @@ def test_create_team_without_required_param(client):
         'league_name': 'La Liga',
         'latitude': '75.021313',
         'longuitude': '56.021313',
-        'plan_type': 'FRE',
+        'plan_type': 'PRE',
         'matches_month_created': 0
     }
 
@@ -88,7 +88,7 @@ def test_create_team_with_invalid_param(client):
         'league_name': 'La Liga',
         'latitude': '75.021313',
         'longuitude': '56.021313',
-        'plan_type': 'FRE',
+        'plan_type': 'PRE',
         'matches_month_created': 0
     }
 

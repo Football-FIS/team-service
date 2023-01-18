@@ -45,7 +45,7 @@ class BuilderModel(object):
                 latitude='75.021313',
                 longuitude='56.85283',
                 expiration=None,
-                plan_type='FRE',
+                plan_type='PRE',
                 matches_month_created=0,
             )
         else:
@@ -64,7 +64,7 @@ class BuilderModel(object):
                 latitude='75.021313',
                 longuitude='56.85283',
                 expiration=None,
-                plan_type='FRE',
+                plan_type='PRE',
                 matches_month_created=0,
             )
 
