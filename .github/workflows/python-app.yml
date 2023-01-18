@@ -32,7 +32,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 Django pytest-django
-        if [ -f team_service/requirements_git.txt ]; then pip install -r team_service/requirements.txt; fi
+        if [ -f team_service/requirements_git.txt ]; then pip install -r team_service/requirements_git.txt; fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
