@@ -26,7 +26,7 @@ A continuación, vamos a indicar las características realizadas y se indicará 
 del código se puede observar su implementación.
 
 ### Características de microservicio avanzado
-Se debian implementar como mínimo 5 características.
+Se debían implementar como mínimo 5 características.
 
 #### Implementar un frontend con rutas y navegación
 Hemos optado por realizar un frontend común para todos los proyectos, este proyecto se puede encontrar 
@@ -40,7 +40,7 @@ Hemos desarrollado los siguientes componentes:
 - update-team: accesible desde url/update-team
 
 #### Implementar caché
-Hemos optado por implementar una cache para este microservicio haciendo uso de Redis.
+Hemos optado por implementar una caché para este microservicio haciendo uso de Redis.
 
 El proyecto puede ser encontrado en este mismo repositorio con el nombre redis-team-service.
 
