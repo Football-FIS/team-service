@@ -7,7 +7,6 @@ from ..builders import BuilderModel
 request_url = '/api/v1/team/'
 
 
-@pytest.mark.django_db
 def test_delete_team(client):
     """
     Check delete method in team.
@@ -24,7 +23,6 @@ def test_delete_team(client):
     assert team_count == 0
 
 
-@pytest.mark.django_db
 def test_delete_team_does_not_exist(client):
     """
     Verify that error is returned when trying 

@@ -7,7 +7,6 @@ from ..builders import BuilderModel
 request_url = '/api/v1/team/'
 
 
-@pytest.mark.django_db
 def test_update_team(client):
     """
     Check update method in team.
@@ -32,7 +31,6 @@ def test_update_team(client):
     assert response_dic == expected_response
 
 
-@pytest.mark.django_db
 def test_update_team_does_not_exist(client):
     """
     Check update method with team does not exist.
@@ -52,7 +50,6 @@ def test_update_team_does_not_exist(client):
     assert response.status_code == 400
 
 
-@pytest.mark.django_db
 def test_update_team_with_invalid_param(client):
     """
     Check update method with invalid param.
@@ -73,7 +70,6 @@ def test_update_team_with_invalid_param(client):
     assert response.status_code == 400
     
 
-@pytest.mark.django_db
 def test_update_team_with_invalid_date(client):
     """
     Check update method with invalid param.
@@ -93,7 +89,6 @@ def test_update_team_with_invalid_date(client):
     assert response.status_code == 400
     
     
-@pytest.mark.django_db
 def test_update_team_with_invalid_capacity(client):
     """
     Check update method with invalid param.
@@ -113,7 +108,6 @@ def test_update_team_with_invalid_capacity(client):
     assert response.status_code == 400
 
 
-@pytest.mark.django_db
 def test_update_team_with_invalid_plan_type(client):
     """
     Check update method with invalid param.
@@ -133,7 +127,6 @@ def test_update_team_with_invalid_plan_type(client):
     assert response.status_code == 400
     
     
-@pytest.mark.django_db
 def test_update_team_with_invalid_matches_created(client):
     """
     Check update method with invalid param.
